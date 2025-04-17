@@ -1,0 +1,111 @@
+
+
+ <div class="container mt-5" style="border: 2px solid black; border-radius: 10px; background-color: rgb(115, 83, 83);">
+    <h2 class="text-center">Register</h2>
+    <form (ngSubmit)="userformsubmit()" #userform="ngForm">
+         <div class="form-group">
+            <label for="name">First Name</label>
+            <input type="text" class="form-control" name="firstname" placeholder="Enter your full name"  #reffname="ngModel" [(ngModel)]="user.firstname" required>
+        </div> 
+        <div *ngIf="reffname.errors?.['required'] && (reffname.touched || reffname.dirty )" class="text-danger">This is required</div> 
+    
+        <div class="form-group">
+            <label for="name">Full name</label>
+            <input type="text" class="form-control" name="firstname" placeholder="Enter your full name" minlength="5"  #reffname="ngModel" [(ngModel)]="user.fullname" required>
+        </div> 
+        <div *ngIf="reffname.errors?.['required'] && (reffname.touched || reffname.dirty )" class="text-danger">This is required</div>
+        <div *ngIf="reffname.errors?.['minlength']" class="text-danger">Minimum 5 character</div>
+        
+        <div class="form-group">
+            <label for="name">Last Name</label>
+            <input type="text" class="form-control" name="name" placeholder="Enter your full name" [(ngModel)]="user.lastname" minlength="10" #reflast="ngModel" required>
+
+        </div>
+        <div *ngIf="reflast.errors?.['required'] && (reffname.touched || reffname.dirty )" class="text-danger">This is required</div>
+        <div *ngIf="reflast.errors?.['minlength']" class="text-danger">Minimum 5 character</div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" name="city" placeholder="Enter your City" required>
+        </div>
+        <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" class="form-control" name="state" placeholder="Enter your State" required>
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Zip</label>
+            <input type="number" class="form-control" name="zip" placeholder="Enter your zip code" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" style="    width: 1294px; margin-top: 34px;">Register</button>
+    </form>
+    <p class="text-center mt-3">Already have an account? <a href="#">Login here</a></p>
+</div> 
+
+<div>
+    <div style="text-align: center;">
+   <h1>{{title}}</h1>
+   <img [src]=imageurl alt="" height="200" width="200"><br><br>
+
+
+    
+<button type="button" class="btn btn-primary" (click)="getstudent()">Student</button>&nbsp;&nbsp;&nbsp;
+<button type="button" class="btn btn-primary" (click)="getfaculty()">Faculty</button>
+    <br><br>
+</div>
+
+    <!-- <ul *ngFor="let item of receivestudent2">
+        <li>{{item}}</li>
+
+    </ul> -->
+<div *ngIf="displaystudent==true">
+    <h2 style="text-align: center;" >Student detail</h2>
+    <table class="table table-dark table-striped" >
+        <thead>
+          <tr>
+           
+            <th scope="col">Name</th>
+            <th scope="col">age</th>
+            <th scope="col">grade</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item  of student ">
+            
+            <td>{{item.name}}</td> 
+            <td>{{item.age}}</td>
+            <td>{{item.grade}}</td>
+           
+         
+        </tbody>
+      </table>
+</div>
+
+<div *ngIf="displayfaculty==true">
+    <h2 style="text-align: center;">Faculty detail</h2>
+    <table class="table table-dark table-striped" >
+        <thead>
+          <tr>
+           
+            <th scope="col">Name</th>
+            <th scope="col">Course</th>
+            <th scope="col">subject code</th>
+           
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item  of receicefaculty ">
+            
+            <td>{{item.name}}</td>
+            <td>{{item.course}}</td>
+            <td>{{item.sub_code}}</td>
+           
+         
+        </tbody>
+      </table>
+</div>
+</div>

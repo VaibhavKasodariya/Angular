@@ -1,0 +1,94 @@
+<!-- <div>
+  <a [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a>
+  <a [routerLink]="['/about']" routerLinkActive="router-link-active" >About</a>
+  <a [routerLink]="['/contact']" routerLinkActive="router-link-active" >Contact</a>
+</div> -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">My-Web</a>
+   
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLink]="['/about']" routerLinkActive="router-link-active">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLink]="['/contact']" routerLinkActive="router-link-active">Contact</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+
+ 
+<div>
+  <button type="button" (click)="getDetail()">User</button>
+  <div *ngIf="displayTable ">
+    <table >
+     
+      <!-- <tr *ngFor="let item of user; let i=index">
+        
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.username}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.address.street}}</td>
+      <td>{{item.address.city}}</td>
+  
+    </tr> -->
+      
+     <!-- <tr *ngFor="let stu of users">
+        
+        <td>{{stu.name}}</td>
+        <td>{{stu.rollnumber}}</td
+        <td>{{stu.division}}</td>
+      </tr> -->
+    </table>
+  
+  <!-- <div>
+    <router-outlet>   </router-outlet>
+  </div> -->
+  </div>
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">name</th>
+        <th scope="col">username</th>
+        <th scope="col">email</th>
+        <th scope="col">city</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of user">
+        
+        <td>{{item.name}}</td>
+        <td>{{item.username}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.address.city}}</td>
+      </tr>
+     
+     
+    </tbody>
+  </table>
+  
+</div>
+
+
+
+
+ 
+  
+  
