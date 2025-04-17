@@ -1,0 +1,49 @@
+
+<h3>Display student from ahmedabad</h3>
+
+<button type="button" class="btn btn-dark" (click)="studentsInAhmedabad" style="margin-left: 50px;">Ahmedabad</button>
+<div *ngIf="stuahmedabad">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of studentsInAhmedabad">
+     
+      <td>{{student.roll_no}}</td>
+      <td>{{student.name}}</td>
+      <td>{{student.address}}</td>
+      <td>{{student.age}}</td>
+    </tr>
+   
+  </tbody>
+</table>
+</div>
+
+
+<h3>sorting by name not perform</h3>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of studentDetails">
+       
+        <td>{{student.roll_no}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.address}}</td>
+        <td>{{student.age}}</td>
+      </tr>
+     
+    </tbody>
+  </table>

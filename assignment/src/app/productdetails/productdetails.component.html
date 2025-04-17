@@ -1,0 +1,22 @@
+
+ <h3>Product details</h3>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Product Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Rate</th>
+        <th scope="col">Total Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of productDetails">
+       
+        <td>{{product.p_name}}</td>
+        <td>{{product.quantity}}</td>
+        <td>{{product.rate}}</td>
+        <td>{{product.quantity * product.rate}}</td>
+      </tr>
+     
+    </tbody>
+  </table>

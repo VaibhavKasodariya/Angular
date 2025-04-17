@@ -1,0 +1,67 @@
+<div class="container mt-5" style="border: 2px solid black; border-radius: 10px; background-color: rgb(115, 83, 83);">
+    <h2 class="text-center text-white">Register</h2>
+    <form (ngSubmit)="userformsubmit()" #userform="ngForm">
+        
+       
+
+        <!-- Full Name Field -->
+        <div class="form-group">
+            <label for="fullname"> Name</label>
+            <input type="text" class="form-control" name="fullname" placeholder="Enter your full name"
+                [(ngModel)]="user.fullname"  #reffullname="ngModel" required pattern="^[A-Za-z\s]+$">
+        </div>
+        <div *ngIf="reffullname.errors?.['required'] && (reffullname.touched || reffullname.dirty)" class="text-danger"> Name is required</div>
+        <div *ngIf="reffullname.errors?.['pattern'] && (reffullname.touched || reffullname.dirty)" class="text-danger">Name should  contain character only</div>
+        
+
+        <!-- Last Name Field -->
+        <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" class="form-control" name="lastname" placeholder="Enter your last name" 
+                [(ngModel)]="user.lastname" minlength="5" #reflast="ngModel" required>
+        </div>
+        <div *ngIf="reflast.errors?.['required'] && (reflast.touched || reflast.dirty)" class="text-danger">Last Name is required</div>
+        <div *ngIf="reflast.errors?.['minlength']" class="text-danger">Last Name must be at least 5 characters</div>
+
+        <!-- Email Field -->
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" name="email" placeholder="Enter your email"
+                [(ngModel)]="user.email" required email #refemail="ngModel">
+        </div>
+        <div *ngIf="refemail.errors?.['required'] && (refemail.touched || refemail.dirty)" class="text-danger">Email is required</div>
+        <div *ngIf="refemail.errors?.['email']" class="text-danger">add &#64; symbol</div>
+
+        <!-- City Field -->
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" name="city" placeholder="Enter your City"
+                [(ngModel)]="user.city" required #refcity="ngModel">
+        </div>
+        <div *ngIf="refcity.errors?.['required'] && (refcity.touched || refcity.dirty)" class="text-danger">City is required</div>
+
+        <!-- State Field -->
+        <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" class="form-control" name="state" placeholder="Enter your State"
+                [(ngModel)]="user.state" required #refstate="ngModel">
+        </div>
+        <div *ngIf="refstate.errors?.['required'] && (refstate.touched || refstate.dirty)" class="text-danger">State is required</div>
+
+        <!-- Zip Code Field -->
+        <div class="form-group">
+            <label for="zip">Pincode</label>
+            <input type="number" class="form-control" name="zip" placeholder="Enter  6 DIGIT pin code"
+                [(ngModel)]="user.zip" required #refzip="ngModel" pattern="^\d{6}$">
+        </div>
+        <div *ngIf="refzip.errors?.['required'] && (refzip.touched || refzip.dirty)" class="text-danger">pin Code is required</div>
+        <div *ngIf="refzip.errors?.['pattern'] " class="text-danger">Pin code 6 digit</div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary btn-block" style="width: 100%; margin-top: 34px;" [disabled]="userform.invalid">
+            Register
+        </button>
+    </form>
+
+    <p class="text-center mt-3">Already have an account? <a href="#">Login here</a></p>
+</div>

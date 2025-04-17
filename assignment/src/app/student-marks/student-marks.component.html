@@ -1,0 +1,22 @@
+
+<h3>Student Marksheet</h3>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col"> Student Name</th>
+        <th scope="col">Marks</th>
+        <th scope="col">Grade</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let stu_mark of student">
+       
+        <td>{{stu_mark.name}}</td>
+        <td>{{stu_mark.marks}}</td>
+        <td>{{stugrade(stu_mark.marks)}}</td>
+     
+      </tr>
+     
+    </tbody>
+  </table>

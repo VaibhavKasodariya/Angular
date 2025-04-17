@@ -1,0 +1,38 @@
+
+<h3>Student Percentage Count</h3>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col"> Student Name</th>
+        <th scope="col">Roll NO.</th>
+        <th scope="col">DS</th>
+        <th scope="col">ANGULAR</th>
+        <th scope="col">MAD</th>
+        <th scope="col">ST</th>
+        <th scope="col">SE</th>
+        <th scope="col">CS</th>
+        <th scope="col">TOTAL MARKS</th>
+        <th scope="col">PERCENTAGE</th>
+
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+       
+        <td>{{student.name}}</td>
+        <td>{{student.roll_no}}</td>
+        <td>{{student.ds}}</td>
+        <td>{{student.angular}}</td>
+        <td>{{student.mad}}</td>
+        <td>{{student.st}}</td>
+        <td>{{student.se}}</td>
+        <td>{{student.cs}}</td>
+        <td>{{totalMarks}}</td>
+        <td>{{percentage | number:'1.2-2'}}%</td>
+        
+     
+      </tr>
+     
+    </tbody>
+  </table>

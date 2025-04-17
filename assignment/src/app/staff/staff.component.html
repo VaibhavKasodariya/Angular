@@ -1,0 +1,22 @@
+
+<h3>Display employee detail in orderby salary</h3>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let staff of sortedStaff">
+       
+        <td>{{staff.id}}</td>
+        <td>{{staff.name}}</td>
+        <td>{{staff.address}}</td>
+        <td>{{staff.salary}}</td>
+      </tr>
+     
+    </tbody>
+  </table>
