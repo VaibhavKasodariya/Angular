@@ -1,0 +1,19 @@
+<div style="text-align: center;background-color: antiquewhite; margin-top: 15%;">
+  <div>
+    <h1>{{projectname}}</h1>
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="firstnum" placeholder="Enter first number: ">&nbsp;&nbsp;
+    <input type="text" [(ngModel)]="secondnum" placeholder="Enter second number: ">&nbsp;&nbsp;
+  </div>
+  <div style="margin-top: 10px;">
+    <button class="btn btn-success" (click)="addition()">ADD</button>&nbsp;&nbsp;
+    <button class="btn btn-success" (click)="subtraction()">SUB</button>&nbsp;&nbsp;
+    <button class="btn btn-success" (click)="multiplication()">MUL</button>&nbsp;&nbsp;
+    <button class="btn btn-success" (click)="divition()">DIV</button>&nbsp;&nbsp;
+    <button class="btn btn-danger" (click)="reset()">RESET</button>&nbsp;&nbsp;
+  </div>
+  <div>
+    <h3>Result is: {{calresult}} </h3>
+  </div>
+</div>

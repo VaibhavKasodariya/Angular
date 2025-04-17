@@ -1,0 +1,8 @@
+<div>
+  <button type="button"class="btn btn-success" (click)="login()" style="margin-top: 10px; margin-left:10px">Login</button>
+  <button type="button" class="btn btn-danger" (click)="logout()" style="margin-top: 10px; margin-left:10px">Logout</button>
+</div>
+<div>
+  <p *ngIf="islogin" class="alert alert-success" style="margin-top: 7px;">Welcome {{username}}</p>
+  <p *ngIf="islogout" class="alert alert-success" style="margin-top: 7px;">fgrfgr {{plelogin}}</p>
+</div>

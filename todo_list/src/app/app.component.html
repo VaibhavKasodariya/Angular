@@ -1,0 +1,15 @@
+<div class="container" >
+  <h1>To do List</h1>
+  <input type="text" [(ngModel)]="newtask" placeholder="Add a new task"/>&nbsp;&nbsp;
+  <button class="btn btn-success" (click)="addtask()">ADD</button>
+
+  <ul style="list-style: none;">
+    <li *ngFor="let task of tasks; let i=index">
+      <p>{{task}}
+      <button class="btn btn-danger" (click)="removetask(i)" style="left: 50%;position: fixed;">Remove</button>
+      
+    </p>
+    </li>
+  </ul>
+</div>
+<button type="button" class="btn btn-danger">Danger</button>

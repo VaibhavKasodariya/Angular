@@ -1,0 +1,41 @@
+<!--<div>
+  <ul>
+    <li *ngFor="let item of studentList">{{item}}</li> 
+  </ul>
+</div>
+-->
+<!--<div>
+  <ul>
+    <li *ngFor="let stu of stu2">{{stu.id}}  {{stu.corse}}  {{stu.name}}  {{stu.Div}}</li>
+  </ul>
+</div> -->
+
+<div class="form-container">
+  <input type="text"  class="form-input" [(ngModel)]="name" placeholder="Name" >
+  <input type="text" class="form-input" placeholder="Enter your division" [(ngModel)]="division">
+  <input type="text" class="form-input" placeholder="Roll number" [(ngModel)]="rollnumber">
+  <button type="submit" class="submit-button" (click)="isdisplay()">Submit</button>
+</div>
+
+<div>
+  <table class="table table-dark table-striped" *ngIf="display">
+    <tr class="table-dark">
+     
+      <th>Name</th>
+      <th>Rollnumber</th>
+      <th>Division</th>
+    </tr>
+    <tr>
+    <td>{{users.name}}</td>
+    <td>{{users.rollnumber}}</td>
+    <td>{{users.division}}</td>
+  </tr>
+    
+   <!-- <tr *ngFor="let stu of users">
+      
+      <td>{{stu.name}}</td>
+      <td>{{stu.rollnumber}}</td
+      <td>{{stu.division}}</td>
+    </tr> -->
+  </table>
+</div> 

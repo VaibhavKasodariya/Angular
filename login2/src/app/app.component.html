@@ -1,0 +1,13 @@
+<div>
+  <button type="button"class="btn btn-success" (click)="login()" style="margin-top: 10px; margin-left:10px">Login</button>
+  <button type="button" class="btn btn-danger"  style="margin-top: 10px; margin-left:10px">Logout</button>
+</div>
+<div>
+  <p *ngIf="islogin; falseCondition" class="alert alert-success" style="margin-top: 7px;">Welcome {{username}} <app-profile></app-profile></p>
+  
+</div>
+<ng-template #falseCondition>
+  <div>
+    <p><app-login></app-login></p>
+  </div>
+</ng-template>
